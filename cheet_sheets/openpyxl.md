@@ -37,6 +37,38 @@ ExcelファイルをPythonで操作するためのライブラリ
 
   # シートの値を読む
   print(sheet["セル名"])
+  print(sheet["セル名"].value)
+
+  v = sheet.cell(row=行番号, column=列番号).value
+  print(v)
+
+  # 指定方法
+  rows = sheet["左上セル名1":"右下セル名2"]
+  rows = sheet["左上セル名1:右下セル名2"]
+  ```
+
+  - 指定範囲を取得する方法
+    ```
+    # 行番号・列番号を指定してイテレータを取得
+    it = sheet.iter_rows(
+      min_row=最小行, max_row=最大行,
+      min_col=最小列, max_col=最大列)
+
+    # for文と組み合わせてセルの値を得る
+    for row in it:
+        for cell in row:
+            print(cell.value)
+    ```
+
+- セル名から行番号と列番号を取得する方法
+  ```
+  # セル名からセルオブジェクトを得る
+  cell = sheet["セル名"]
+  print(cell.row, cell.column)
+
+  # 行番号と列番号からセルオブジェクトを得る
+  cell =sheet.cell(row=行番号, column=列番号)
+  print(cell.coordinate)
   ```
 
 - Excelファイルを保存する方法
