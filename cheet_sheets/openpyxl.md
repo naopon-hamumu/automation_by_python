@@ -1,6 +1,10 @@
 ### openpyxl
 ExcelファイルをPythonで操作するためのライブラリ
 
+#### マニュアル
+  - [openpyxlのマニュアル](https://openpyxl.readthedocs.io/)
+  - [openpyxl内のモジュール一覧](https://openpyxl.readthedocs.io/en/stable/api/openpyxl.html)
+
 - セル名を指定する方法
   ```
   # シートに値を書き込む
@@ -130,3 +134,21 @@ ExcelファイルをPythonで操作するためのライブラリ
   ```
   sheet["セル名"].number_format = "yyyy/mm/dd"
   ```
+
+  | 記号 | 意味 |
+  | :---: | :---: |
+  | yyyy | 西暦(4桁) |
+  | mm | 月(2桁) |
+  | m | 月(1桁) |
+  | dd | 日(2桁) |
+  | d | 日(1桁) |
+  | dddd | 曜日(英語) |
+  | mmm | 英語の月名 |
+  | [$-411]ggge | 和暦年 |
+  | [$-411]gge | 和暦年(1文字) |
+  | [$411]dddd | 曜日(日本語) |
+
+- 罫線の書式設定<br>
+  | 普通の線 | thick, thin, medium. double |
+  | 点線 | dashed, dotted, mediumDashDot, mediumDashDotDot, slantDashDot, mediumDashed, dashDotDot, dashDot |
+
